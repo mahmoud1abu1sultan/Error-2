@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="LodingScreen" prefHeight="193.0" prefWidth="590.0" style="-fx-background-color: linear-gradient(to left bottom, #b6ff59, #17b77b, #179bb5,  #1f17b9);" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lodingwindowe.FXMLDocumentController">
+    <stylesheets>
+        <URL value="@fxmldocument.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="81.0" layoutY="14.0" text="Medical Clinic">
+         <font>
+            <Font name="Cambria" size="46.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#b6ff0d" />
+                  <Stop color="#1f17b0ed" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="83.0" fitWidth="67.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/icons8_DOT_100px.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lodingText" layoutX="48.0" layoutY="105.0" maxHeight="300.0" maxWidth="300.0" text="Loding Files ...">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="progressBar" layoutX="48.0" layoutY="126.0" prefHeight="18.0" prefWidth="428.0" progress="0.0" />
+      <HBox alignment="TOP_RIGHT" layoutX="525.0" layoutY="5.0" prefHeight="30.0" prefWidth="60.0">
+         <children>
+            <ImageView fx:id="minemumRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Minus_30px_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="closeRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Cancel_30px_3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" layoutX="525.0" layoutY="5.0" prefHeight="30.0" prefWidth="60.0">
+         <children>
+            <ImageView fx:id="minemum" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mininizing" onMouseEntered="#showMinimizeRed" onMouseExited="#hidenMinimizeRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Minus_32px_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="close" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closing" onMouseEntered="#showCloseRed" onMouseExited="#hidenCloseRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Cancel_32px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="170.0" prefHeight="20.0" prefWidth="126.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="emailRed" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Secured_Letter_32px_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="instegramRed" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Instagram_32px_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="faceBookRed" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Facebook_32px_7.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="tuetarRed" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Twitter_32px_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="youtybeRed" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_YouTube_32px_1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="170.0" prefHeight="20.0" prefWidth="236.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="email" fitHeight="20.0" fitWidth="20.0" onMouseEntered="#showEmailRed" onMouseExited="#hidenEmailRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Gmail_32px_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="instegram" fitHeight="20.0" fitWidth="20.0" onMouseEntered="#showInstaRed" onMouseExited="#hidenInstaRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Instagram_32px.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="faceBook" fitHeight="20.0" fitWidth="20.0" onMouseEntered="#showFaceBookRed" onMouseExited="#hidenFaceBookRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Facebook_32px_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="tuetar" fitHeight="20.0" fitWidth="20.0" onMouseEntered="#showTueterRed" onMouseExited="#hidenTueterRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Twitter_32px.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="youtybe" fitHeight="20.0" fitWidth="20.0" onMouseEntered="#showYoutupRed" onMouseExited="#hidenYoutupRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_YouTube_32px.png" />
+               </image>
+            </ImageView>
+            <Label text="medical_clinic.com" textFill="#9bda3d" />
+         </children>
+      </HBox>
+      <Label layoutX="81.0" layoutY="60.0" text="For medical and health care services ..." textFill="#77ff00" />
+   </children>
+</AnchorPane>

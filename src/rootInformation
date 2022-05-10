@@ -1,0 +1,19 @@
+background غامق color :    #15191c
+background فاتحcolor :   #1f242a
+background colorافتح :    #2f353d
+----------
+text phosphor color : #a9e031
+text red color : #ff300c
+text doctor color : #4deae0
+text linear color : #bdff2e -> #37eeff
+text size : 14
+text size : 24
+-----------
+input size : width 260, hight 40
+------------
+icon mini size : 53,53
+icon max size : 100,100
+----------
+login page size : width 910, hight 620
+---------------
+image nurses :  ..\Images\nurse.png

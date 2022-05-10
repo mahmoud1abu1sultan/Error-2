@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="MainWindowScreen" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #2f353d;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lodingwindowe.MainWindowController">
+   <children>
+      <Pane fx:id="patientPane" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2f353d;" visible="false">
+         <children>
+            <ImageView fitHeight="586.0" fitWidth="977.0" layoutX="12.0" layoutY="7.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/wallpaperbetter.com_1280x768%20(2).jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="24.0" layoutY="20.0" prefHeight="147.0" prefWidth="310.0" style="-fx-background-radius: 10; -fx-border-color: #4deae0; -fx-border-radius: 10; -fx-border-width: 2;">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="2.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/patient.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutY="39.0" prefHeight="3.0" prefWidth="94.0" style="-fx-background-color: #4deae0;" />
+                  <Label layoutX="36.0" layoutY="12.0" text="Patient" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="p$patientImage" fitHeight="110.0" fitWidth="110.0" layoutX="195.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+                  <VBox alignment="CENTER_LEFT" layoutX="11.0" layoutY="43.0" prefHeight="97.0" prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Name" textFill="#4deae0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="p$patientName" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Age" textFill="#4deae0" />
+                              <Label fx:id="p$parientAge" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Gender" textFill="#4deae0" />
+                              <Label fx:id="p$patientGender" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Pathological case" textFill="#4deae0" />
+                              <Label fx:id="p$patientPathologicalCase" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <Pane layoutX="24.0" layoutY="353.0" prefHeight="215.0" prefWidth="213.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" text="Times of work" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="169.0" layoutY="12.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="Edite" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <VBox layoutX="12.0" layoutY="41.0" prefHeight="160.0" prefWidth="146.0" spacing="8.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-monday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="01 - 11 PM" textFill="#4deae0">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-tuesday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="01 - 10 PM" textFill="#4deae0">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-wednesday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="02 - 05 PM" textFill="#4deae0">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+         </children></Pane>
+      <Pane fx:id="doctorPane" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2f353d;">
+         <children>
+            <ImageView fitHeight="591.0" fitWidth="977.0" layoutX="12.0" layoutY="7.0" opacity="0.32" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/wallpaperbetter.com_1280x768%20(1).jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="696.0" layoutY="41.0" prefHeight="262.0" prefWidth="286.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" text="Emergency" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="203.0" layoutY="12.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="+ Add Case" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <VBox layoutX="25.0" layoutY="36.0" prefHeight="215.0" prefWidth="249.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="Minor injuries" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="Serious injuries" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="critical injuries" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="212.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="Clinical death" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="deaths" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="372.0" prefHeight="215.0" prefWidth="213.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" text="Times of work" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="169.0" layoutY="12.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="Edite" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <VBox layoutX="12.0" layoutY="41.0" prefHeight="160.0" prefWidth="146.0" spacing="8.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-monday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="01 - 11 PM" textFill="#4deae0">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-tuesday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="01 - 10 PM" textFill="#4deae0">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-wednesday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="02 - 05 PM" textFill="#4deae0">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="10.0" prefHeight="147.0" prefWidth="310.0" style="-fx-background-radius: 10; -fx-border-color: #4deae0; -fx-border-radius: 10; -fx-border-width: 2;">
+               <children>
+                  <ImageView fx:id="doctorORnurse_image" fitHeight="40.0" fitWidth="40.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/doctor.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutY="39.0" prefHeight="3.0" prefWidth="94.0" style="-fx-background-color: #4deae0;" />
+                  <Label fx:id="doctorORnurse_text" layoutX="36.0" layoutY="12.0" text="Doctor" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fx:id="d$doctorImage" fitHeight="110.0" fitWidth="110.0" layoutX="195.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+                  <VBox alignment="CENTER_LEFT" layoutX="11.0" layoutY="43.0" prefHeight="97.0" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Name" textFill="#4deae0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="d$doctorName" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Age" textFill="#4deae0" />
+                              <Label fx:id="d$doctorAge" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Gender" textFill="#4deae0" />
+                              <Label fx:id="d$doctorGender" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Specialization" textFill="#4deae0" />
+                              <Label fx:id="d$doctorSpecialization" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <Pane layoutX="333.0" layoutY="10.0" prefHeight="147.0" prefWidth="168.0" style="-fx-background-radius: 10; -fx-border-color: #4deae0; -fx-border-radius: 10; -fx-border-width: 2;">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/doctor.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="70.0" layoutY="12.0" text="Doctors" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="d$numberDoctors" layoutX="69.0" layoutY="44.0" prefHeight="27.0" prefWidth="30.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="59.0" layoutY="74.0" text="Doctors" textFill="#4deae0" />
+                  <Separator layoutX="37.0" layoutY="41.0" opacity="0.57" prefHeight="0.0" prefWidth="94.0" style="-fx-background-color: #4deae0;" />
+                  <Label layoutX="8.0" layoutY="116.0" text="Doctor Male" textFill="#4deae0" />
+                  <Label fx:id="d$numberDoctorMale" layoutX="26.0" layoutY="93.0" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="87.0" layoutY="116.0" text="Doctor Female" textFill="#4deae0" />
+                  <Label fx:id="d$numberDoctorFemale" layoutX="97.0" layoutY="93.0" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="509.0" layoutY="10.0" prefHeight="147.0" prefWidth="168.0" style="-fx-background-radius: 10; -fx-border-color: #4deae0; -fx-border-radius: 10; -fx-border-width: 2;">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="32.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/nurse.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="70.0" layoutY="12.0" text="Nurses" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="59.0" layoutY="74.0" text="Nurses" textFill="#4deae0" />
+                  <Separator layoutX="37.0" layoutY="41.0" opacity="0.57" prefHeight="0.0" prefWidth="94.0" style="-fx-background-color: #4deae0;" />
+                  <Label layoutX="8.0" layoutY="116.0" text="Nurse Male" textFill="#4deae0" />
+                  <Label fx:id="d$numberNurserMale" layoutX="26.0" layoutY="93.0" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="87.0" layoutY="116.0" text="Nurse Female" textFill="#4deae0" />
+                  <Label fx:id="d$numberNurseFemale" layoutX="97.0" layoutY="93.0" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="d$numberNurses" layoutX="69.0" layoutY="44.0" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator layoutX="14.0" layoutY="160.0" opacity="0.17" prefHeight="3.0" prefWidth="663.0" style="-fx-background-color: #4deae0; -fx-background-radius: 5; -fx-border-color: non;" />
+            <Pane layoutX="14.0" layoutY="165.0" prefHeight="200.0" prefWidth="310.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="48.0" layoutY="8.0" text="Patients" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="d$addNewPatient" layoutX="213.0" layoutY="13.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="+ Add Patient" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/patient.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="108.0" layoutY="43.0" opacity="0.57" prefHeight="0.0" prefWidth="94.0" style="-fx-background-color: #4deae0;" />
+                  <VBox alignment="CENTER" layoutX="123.0" layoutY="46.0" prefHeight="47.0" prefWidth="65.0">
+                     <children>
+                        <Label fx:id="d$numberPatients" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Patients" textFill="#4deae0" />
+                     </children>
+                  </VBox>
+                  <Separator layoutX="80.0" layoutY="92.0" opacity="0.57" prefHeight="0.0" prefWidth="150.0" style="-fx-background-color: #4deae0;" />
+                  <VBox alignment="CENTER" layoutX="48.0" layoutY="95.0" prefHeight="44.0" prefWidth="88.0">
+                     <children>
+                        <Label fx:id="d$numberPatientFemale" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Patient Female" textFill="#4deae0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="198.0" layoutY="94.0" prefHeight="47.0">
+                     <children>
+                        <Label fx:id="d$numberPatientsMale" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Patient Male" textFill="#4deae0" />
+                     </children>
+                  </VBox>
+                  <Separator layoutX="55.0" layoutY="140.0" opacity="0.57" prefHeight="0.0" prefWidth="200.0" style="-fx-background-color: #4deae0;" />
+                  <VBox alignment="CENTER" layoutX="12.0" layoutY="143.0" prefHeight="47.0" prefWidth="65.0">
+                     <children>
+                        <Label fx:id="d$numberPaOverage" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Overage" textFill="#4deae0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="76.0" layoutY="143.0" prefHeight="47.0" prefWidth="65.0">
+                     <children>
+                        <Label fx:id="d$numberPaChildren" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Children" textFill="#4deae0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="166.0" layoutY="143.0" prefHeight="47.0" prefWidth="65.0">
+                     <children>
+                        <Label fx:id="d$numberPaPregnant" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Pregnant" textFill="#4deae0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="233.0" layoutY="143.0" prefHeight="47.0" prefWidth="65.0">
+                     <children>
+                        <Label fx:id="d$numberPaYoung" prefHeight="20.0" prefWidth="30.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Young" textFill="#4deae0" />
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <Separator layoutX="681.0" layoutY="7.0" opacity="0.52" orientation="VERTICAL" prefHeight="586.0" prefWidth="0.0" style="-fx-background-color: #4deae0; -fx-border-color: non; -fx-border-width: 0; -fx-background-radius: 10; -fx-border-radius: 10;" />
+            <Label layoutX="814.0" layoutY="14.0" text="MEDICAL" textFill="#4deae0">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="15.0" />
+               </font>
+            </Label>
+            <Pane layoutX="696.0" layoutY="315.0" prefHeight="270.0" prefWidth="286.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" text="Emergency" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="203.0" layoutY="12.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="+ Add Case" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <VBox layoutX="25.0" layoutY="36.0" prefHeight="215.0" prefWidth="249.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="Minor injuries" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="Serious injuries" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="critical injuries" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="212.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="Clinical death" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="30.0" text="00" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="35.0" text="deaths" textFill="#4deae0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="homePane" layoutX="50.0" layoutY="50.0" onMouseClicked="#onClickPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2f353d;" visible="false">
+         <children>
+            <Pane layoutX="190.0" layoutY="14.0" prefHeight="270.0" prefWidth="575.0" style="-fx-background-color: #0f62ba;">
+               <children>
+                  <ImageView fitHeight="270.0" fitWidth="486.0" layoutX="143.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/wallpaperbetter.com_1920x1200.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="247.0" fitWidth="143.0" layoutX="71.0" layoutY="23.0" opacity="0.22" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                     <image>
+                        <Image url="@../Images/wallpaperbetter.com_320x570%20(2).jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="11.0" layoutY="10.0" prefHeight="26.0" prefWidth="575.0" text="VOLUNTEER ABROAD OPPORTUNITIES &amp; INTERNSHIPS OVERSEAS">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#4deae0" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="34.0" text="Mission Trips Abroad Travel Where You Are Needed…">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#4deae0" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label layoutX="42.0" layoutY="83.0" text="Explore Our Destinations" textFill="#4deae0">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="59.0" layoutY="135.0" text=" Volunteer Programs" textFill="#4deae0">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="62.0" layoutY="185.0" text="2022 Covid Updates" textFill="#4deae0">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="190.0" layoutY="289.0" prefHeight="301.0" prefWidth="152.0" style="-fx-background-color: #ffffff; -fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="22.0" layoutY="11.0" text="Times of work" textFill="#40433a">
+                     <font>
+                        <Font name="Calibri" size="19.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="10.0" layoutY="57.0" prefHeight="230.0" prefWidth="133.0" spacing="8.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-monday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="01 - 11 PM">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-tuesday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="01 - 10 PM">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-wednesday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="02 - 05 PM">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Images/icons8-thursday-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="04 - 10 PM">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Separator layoutY="43.0" prefHeight="3.0" prefWidth="152.0" style="-fx-background-color: #2f353d;" />
+               </children>
+            </Pane>
+            <Pane layoutX="350.0" layoutY="289.0" prefHeight="301.0" prefWidth="415.0" style="-fx-background-color: #ffffff; -fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" text="latest news" textFill="#40433a">
+                     <font>
+                        <Font name="Calibri" size="19.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutY="37.0" prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
+                  <Label layoutX="331.0" layoutY="9.0" onMouseClicked="#addNew_LastNews" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="+ Add News" textFill="#f5f4f4">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ScrollPane layoutY="40.0" prefHeight="262.0" prefWidth="415.0" style="-fx-background-color: #ffffff;">
+                     <content>
+                        <VBox fx:id="listOf_LastNews" layoutX="5.0" prefHeight="200.0" prefWidth="413.0">
+                           <children>
+                              <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
+                                 <children>
+                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Appointments" textFill="#f5f4f4">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="The morning work hours were advanced by an hour, and the evening " />
+                                    <Label text="hours were delayed by half an hour" />
+                                    <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
+                                 <children>
+                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Doctores" textFill="#f5f4f4">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="A new oncologist has been appointed based on his experiences and" />
+                                    <Label text="the certificates assigned to him" />
+                                    <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
+                                 <children>
+                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Add a patient" textFill="#f5f4f4">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="A new patient has been admitted to the thromboembolism department" />
+                                    <Label text="with mild obstruction" />
+                                    <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
+                                 <children>
+                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Patient referrals" textFill="#f5f4f4">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="A patient was transferred from the dressing department to the" />
+                                    <Label text=" emergency operations department" />
+                                    <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
+                                 <children>
+                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Appointments" textFill="#f5f4f4">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="The morning work hours were advanced by an hour, and the evening " />
+                                    <Label text="hours were delayed by half an hour" />
+                                    <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+            <VBox alignment="CENTER" layoutX="14.0" layoutY="11.0" prefHeight="582.0" prefWidth="168.0" spacing="20.0">
+               <children>
+                  <Pane fx:id="doctorPaneSup" prefHeight="138.0" prefWidth="168.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20; -fx-border-color: #4deae0; -fx-border-radius: 20; -fx-border-width: 2;">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="105.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/doctor.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" layoutX="12.0" layoutY="13.0" prefHeight="47.0" prefWidth="65.0">
+                           <children>
+                              <Label fx:id="numberDoctors" prefHeight="27.0" prefWidth="30.0" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Doctors" />
+                           </children>
+                        </VBox>
+                        <Separator layoutX="13.0" layoutY="67.0" prefHeight="0.0" prefWidth="143.0" />
+                        <Label fx:id="numberDoctorMale" layoutX="120.0" layoutY="79.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="103.0" text="Doctor Female" />
+                        <Label layoutX="24.0" layoutY="81.0" text="Doctor Male" />
+                        <Label fx:id="numberDoctorFemale" layoutX="120.0" layoutY="101.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="nursesPaneSup" prefHeight="138.0" prefWidth="168.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20; -fx-border-color: #4deae0; -fx-border-radius: 20; -fx-border-width: 2;">
+                     <children>
+                        <Separator layoutX="13.0" layoutY="67.0" prefHeight="0.0" prefWidth="143.0" />
+                        <Label fx:id="numberNurserMale" layoutX="120.0" layoutY="79.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="103.0" text="Nurse Female" />
+                        <Label layoutX="24.0" layoutY="81.0" text="Nurse Male" />
+                        <Label fx:id="numberNurseFemale" layoutX="120.0" layoutY="101.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="106.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/nurse.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="47.0" prefWidth="65.0">
+                           <children>
+                              <Label fx:id="numberNurses" prefHeight="20.0" prefWidth="30.0" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Nurses" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="PatientPaneSup" prefHeight="247.0" prefWidth="168.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20; -fx-border-color: #4deae0; -fx-border-radius: 20; -fx-border-width: 2;">
+                     <children>
+                        <Separator layoutX="13.0" layoutY="67.0" prefHeight="0.0" prefWidth="143.0" />
+                        <Label fx:id="numberPatientFemale" layoutX="120.0" layoutY="79.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="80.0" text="Patient Female" />
+                        <Label layoutX="24.0" layoutY="102.0" text="Patient Male" />
+                        <Label fx:id="numberPatientsMale" layoutX="120.0" layoutY="101.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="106.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/patient.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="47.0" prefWidth="65.0">
+                           <children>
+                              <Label fx:id="numberPatients" prefHeight="20.0" prefWidth="30.0" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Patients" />
+                           </children>
+                        </VBox>
+                        <Separator layoutX="13.0" layoutY="128.0" prefHeight="0.0" prefWidth="143.0" />
+                        <Label layoutX="24.0" layoutY="143.0" text="Overage" />
+                        <Label fx:id="numberPaOverage" layoutX="120.0" layoutY="142.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="166.0" text="Children" />
+                        <Label fx:id="numberPaChildren" layoutX="120.0" layoutY="163.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="187.0" text="Pregnant" />
+                        <Label fx:id="numberPaPregnant" layoutX="120.0" layoutY="186.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="207.0" text="Young" />
+                        <Label fx:id="numberPaYoung" layoutX="120.0" layoutY="206.0" prefHeight="20.0" prefWidth="30.0" text="0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <Pane fx:id="listOf_Newsletter1" layoutX="773.0" layoutY="12.0" prefHeight="576.0" prefWidth="220.0" style="-fx-background-color: #ffffff; -fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="14.0" layoutY="3.0" text="Newsletter" textFill="#40433a">
+                     <font>
+                        <Font name="Calibri" size="19.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutY="35.0" prefHeight="3.0" prefWidth="220.0" style="-fx-background-color: #2f353d;" />
+                  <ScrollPane layoutY="38.0" prefHeight="540.0" prefWidth="220.0">
+                     <content>
+                        <AnchorPane prefWidth="213.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefWidth="213.0" spacing="2.0">
+                                 <children>
+                                    <Label text="Primary Doctors for Men">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="200.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Images/pationt.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <TextArea editable="false" prefWidth="210.0" style="-fx-background-color: non; -fx-border-color: non;" text="Men’s health  doctor – what does&#10;that mean? After all, both men&#10;andwomen have many health &#10;eeds in common.&#10;Routine blood pressure checks,&#10;screening and maintenance for&#10;conditions such as heart disease,&#10;diabetes and cancers, treatment for&#10;injuries, infections and chronic&#10;illnesses, mental health screening&#10;and referrals can all fall under the&#10;umbrella of primary care –regardles&#10;of sex or gender.&#10;" />
+                                    <Separator prefHeight="3.0" prefWidth="152.0" style="-fx-background-color: #2f353d;" />
+                                    <Label text="3 STEPS TO SURVIVING  ..">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="216.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Images/wallpaperbetter.com_320x570.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <TextArea editable="false" prefWidth="98.0" style="-fx-background-color: non; -fx-border-color: non;" text="Over the yeI have seen many howks,&#10;and articles onwilderness m survival.&#10;However,usually these either cover&#10; onesurvivalusually these either&#10; cover onesurvivalusually these &#10;either cover onesurvivalusually thes&#10; either cover onesurvival" />
+                                    <Separator prefHeight="3.0" prefWidth="152.0" style="-fx-background-color: #2f353d;" />
+                                    <Label text="Primary Doctors for Men">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="188.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Images/doctor.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <TextArea editable="false" prefWidth="210.0" style="-fx-background-color: non; -fx-border-color: non;" text="Men’s health  doctor – what does&#10;that mean? After all, both men&#10;andwomen have many health &#10;eeds in common.&#10;Routine blood pressure checks,&#10;screening and maintenance for&#10;conditions such as heart disease,&#10;diabetes and cancers, treatment for&#10;injuries, infections and chronic&#10;illnesses, mental health screening&#10;and referrals can all fall under the&#10;umbrella of primary care –regardles&#10;of sex or gender." />
+                                    <Separator prefHeight="3.0" prefWidth="152.0" style="-fx-background-color: #2f353d;" />
+                                    <ImageView fitHeight="138.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Images/wallpaperbetter.com_320x570%20(1).jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <Label layoutX="137.0" layoutY="9.0" onMouseClicked="#addNew_LastNews" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="+ Add News" textFill="#f5f4f4">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="clo" layoutX="651.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="399.0" style="-fx-background-color: #1f242a;">
+         <children>
+            <HBox layoutX="7.0" layoutY="10.0" prefHeight="30.0" prefWidth="65.0">
+               <children>
+                  <ImageView fx:id="closeRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/icons8_Cancel_30px_3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="minemumRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/icons8_Minus_30px_3.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox layoutX="7.0" layoutY="10.0" prefHeight="30.0" prefWidth="55.0">
+               <children>
+                  <ImageView fx:id="close" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closing" onMouseEntered="#showCloseRed" onMouseExited="#hidenCloseRed" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../Images/icons8_Cancel_32px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="minemum" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mininizing" onMouseEntered="#showMinimizeRed" onMouseExited="#hidenMinimizeRed" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../Images/icons8_Minus_32px_1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="73.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/setting.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <TextField fx:id="searchInput" alignment="CENTER_RIGHT" layoutX="139.0" layoutY="11.0" prefHeight="30.0" prefWidth="230.0" promptText="Search" style="-fx-background-color: #ffffff; -fx-background-radius: 20; -fx-text-fill: #000000;" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="105.0" layoutY="13.0" onMouseClicked="#showSearch" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/user.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="men" prefHeight="650.0" prefWidth="50.0" style="-fx-background-color: #1f242a;">
+         <children>
+            <VBox layoutX="10.0" layoutY="490.0" prefHeight="160.0" prefWidth="30.0" spacing="2.0">
+               <children>
+                  <ImageView fx:id="emailRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/icons8_Secured_Letter_32px_2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="instegramRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/icons8_Instagram_32px_3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="faceBookRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/icons8_Facebook_32px_7.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="tuetarRed" fitHeight="2030.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/icons8_Twitter_32px_2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="youtybeRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/icons8_YouTube_32px_1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="490.0" prefHeight="160.0" prefWidth="30.0" spacing="2.0">
+               <children>
+                  <ImageView fx:id="email" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showEmailRed" onMouseExited="#hidenEmailRed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_Gmail_32px_3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="instegram" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showInstaRed" onMouseExited="#hidenInstaRed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_Instagram_32px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="faceBook" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showFaceBookRed" onMouseExited="#hidenFaceBookRed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_Facebook_32px_2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="tuetar" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showTueterRed" onMouseExited="#hidenTueterRed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_Twitter_32px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="youtybe" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showYoutupRed" onMouseExited="#hidenYoutupRed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_YouTube_32px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <ImageView fx:id="homeIcon" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="115.0" onMouseClicked="#goHomePane" onMouseEntered="#showHomeText" onMouseExited="#hidenHomeText" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <image>
+                  <Image url="@../Images/stay-at-home.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="doctorIcon" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="150.0" onMouseClicked="#goDoctorPane" onMouseEntered="#showDoctorText" onMouseExited="#hidenDoctorText" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <image>
+                  <Image url="@../Images/doctor.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="patientIcon" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="190.0" onMouseClicked="#goPatientPane" onMouseEntered="#showPatientText" onMouseExited="#hidenPatientText" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <image>
+                  <Image url="@../Images/patient.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="userIcon" fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="71.0" onMouseClicked="#goToSingInScene" onMouseEntered="#showSingInText" onMouseExited="#hidenSingInText" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/user%20(2).png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="logo" prefHeight="50.0" prefWidth="652.0" style="-fx-background-color: #1f242a;">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_DOT_100px.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="52.0" layoutY="8.0" prefHeight="35.0" prefWidth="188.0" text="MEDICAL CLINIC ">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="24.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#bdff2e" />
+                        <Stop color="#37eeff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="234.0" layoutY="16.0" text="pulse of life" textFill="#a9e031">
+               <font>
+                  <Font name="Trebuchet MS" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <HBox fx:id="homeText" alignment="CENTER_LEFT" layoutX="50.0" layoutY="115.0" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #1f242a;" visible="false">
+         <children>
+            <Label text="Home" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="doctorText" alignment="CENTER_LEFT" layoutX="50.0" layoutY="150.0" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #1f242a;" visible="false">
+         <children>
+            <Label text="Doctor and Nurse" textFill="#a9e031">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="patientText" alignment="CENTER_LEFT" layoutX="50.0" layoutY="190.0" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #1f242a;" visible="false">
+         <children>
+            <Label prefHeight="0.0" prefWidth="57.0" text="Patient" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="singInText" alignment="CENTER_LEFT" layoutX="50.0" layoutY="77.0" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #1f242a;" visible="false">
+         <children>
+            <Label text="Sing In" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

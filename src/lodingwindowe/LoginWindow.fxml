@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="loginScren" maxHeight="620.0" maxWidth="910.0" minHeight="620.0" minWidth="910.0" prefHeight="620.0" prefWidth="910.0" style="-fx-background-color: #15191c;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lodingwindowe.LoginWindowController">
+   <children>
+      <HBox layoutX="5.0" layoutY="5.0" prefHeight="20.0" prefWidth="125.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="emailRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Secured_Letter_32px_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="instegramRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Instagram_32px_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="faceBookRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Facebook_32px_7.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="tuetarRed" fitHeight="2030.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_Twitter_32px_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="youtybeRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../Images/icons8_YouTube_32px_1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="5.0" layoutY="5.0" prefHeight="30.0" prefWidth="170.0" spacing="5.0">
+         <children>
+            <ImageView fx:id="email" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showEmailRed" onMouseExited="#hidenEmailRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Gmail_32px_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="instegram" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showInstaRed" onMouseExited="#hidenInstaRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Instagram_32px.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="faceBook" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showFaceBookRed" onMouseExited="#hidenFaceBookRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Facebook_32px_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="tuetar" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showTueterRed" onMouseExited="#hidenTueterRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Twitter_32px.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="youtybe" fitHeight="30.0" fitWidth="30.0" onMouseEntered="#showYoutupRed" onMouseExited="#hidenYoutupRed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_YouTube_32px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Pane fx:id="mainPane" layoutX="460.0" prefHeight="620.0" prefWidth="450.0" style="-fx-background-color: #1f242a;">
+         <children>
+            <HBox layoutX="385.0" layoutY="5.0" prefHeight="30.0" prefWidth="60.0">
+               <children>
+                  <ImageView fx:id="minemumRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/icons8_Minus_30px_3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="closeRed" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/icons8_Cancel_30px_3.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" layoutX="385.0" layoutY="5.0" prefHeight="30.0" prefWidth="60.0">
+               <children>
+                  <ImageView fx:id="minemum" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mininizing" onMouseEntered="#showMinimizeRed" onMouseExited="#hidenMinimizeRed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_Minus_32px_1.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="close" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closing" onMouseEntered="#showCloseRed" onMouseExited="#hidenCloseRed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_Cancel_32px.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" layoutX="12.0" layoutY="190.0" prefHeight="240.0" prefWidth="426.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="103.0" prefWidth="272.0">
+                     <children>
+                        <ImageView fitHeight="103.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/icons8_DOT_100px.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" prefHeight="103.0" prefWidth="303.0">
+                           <children>
+                              <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="252.0" text="Medical Clinic" textFill="#a9e031">
+                                 <font>
+                                    <Font name="Trebuchet MS Bold" size="36.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="36.0" prefWidth="268.0" text="Services and medical care" textFill="#769e1a">
+                                 <font>
+                                    <Font name="Cambria Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label prefHeight="75.0" prefWidth="301.0" text="Pulse of Life (^_-)" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#bcff2d" />
+                              <Stop color="#bdff2e" offset="0.007662835249042145" />
+                              <Stop color="#37eeff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </VBox>
+            <ImageView fitHeight="150.0" fitWidth="100.0" layoutX="172.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/icons8_Protect_100px_3.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="successCreat" layoutX="115.0" layoutY="494.0" text="Successfull Creating (^_^)" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#bcff2d" />
+                        <Stop color="#bdff2e" offset="0.007662835249042145" />
+                        <Stop color="#1acaff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="183.0" layoutY="77.0" text="MAHMOUD.T" textFill="#a9e031">
+               <font>
+                  <Font name="Andalus" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="20.0" layoutY="43.0" text="Connect whit us in (^_^)" textFill="#a9e031">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="180.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/icons8_User_Shield_100px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="55.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/icons8_Male_User_35px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="55.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/icons8_Lock_35px.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="101.0" layoutY="214.0" text="Email" textFill="#a9e031">
+         <font>
+            <Font name="Verdana Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="299.0" text="Password" textFill="#a9e031">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="101.0" layoutY="444.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#singInClick" prefHeight="40.0" prefWidth="260.0" style="-fx-border-radius: 0; -fx-background-color: #1f242a;" text="Sing In" textFill="#a9e031">
+         <font>
+            <Font name="Verdana Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="148.0" layoutY="493.0" mnemonicParsing="false" onMouseClicked="#creatNewAcountClick" style="-fx-background-color: non; -fx-border-color: #a9e031;" text="Creat New Acount" textFill="#a9e031">
+         <font>
+            <Font name="Verdana Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="191.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#forgetPass" prefHeight="23.0" prefWidth="177.0" style="-fx-background-color: non;" text="Forget Password? (-_-)" textFill="#a9e031">
+         <font>
+            <Font name="Verdana Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="loginPassword" layoutX="100.0" layoutY="322.0" prefHeight="40.0" prefWidth="260.0" promptText="Password" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+      <TextField fx:id="loginEmail" layoutX="100.0" layoutY="234.0" prefHeight="40.0" prefWidth="260.0" promptText="Email" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+      <Pane fx:id="newAcountPane" layoutX="487.0" layoutY="45.0" prefHeight="553.0" prefWidth="397.0" style="-fx-background-color: #1f242a;" visible="false">
+         <children>
+            <HBox layoutX="47.0" layoutY="7.0" prefHeight="87.0" prefWidth="303.0">
+               <children>
+                  <ImageView fitHeight="88.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_DOT_100px.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="103.0" prefWidth="225.0">
+                     <children>
+                        <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="252.0" text="Medical Clinic" textFill="#a9e031">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="26.0" prefWidth="225.0" text="Services and medical care" textFill="#769e1a">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label layoutX="34.0" layoutY="129.0" text="First Name" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="logupFName" layoutX="31.0" layoutY="147.0" prefHeight="40.0" prefWidth="120.0" promptText="First Name" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <Button layoutX="69.0" layoutY="469.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#singUpClick" prefHeight="40.0" prefWidth="260.0" style="-fx-border-radius: 0; -fx-background-color: #15191c;" text="Sing Up" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="logupLNmae" layoutX="238.0" layoutY="147.0" prefHeight="40.0" prefWidth="120.0" promptText="Last Name" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <Label layoutX="238.0" layoutY="129.0" text="Last Name" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="logupEmail" layoutX="69.0" layoutY="243.0" prefHeight="40.0" prefWidth="260.0" promptText="Email" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <TextField fx:id="logupPassword" layoutX="69.0" layoutY="315.0" prefHeight="40.0" prefWidth="260.0" promptText="Password" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <Label layoutX="72.0" layoutY="225.0" text="Email" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="68.0" layoutY="297.0" text="Password" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="367.0" text="Confirm Password" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="logupConfirmPassword" layoutX="69.0" layoutY="385.0" prefHeight="40.0" prefWidth="260.0" promptText="Confirm Password" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <HBox alignment="CENTER" layoutX="149.0" layoutY="511.0" prefHeight="35.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#backCreateClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_Back_To_32px_2.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button mnemonicParsing="false" style="-fx-background-color: non; -fx-border-color: #a9e031; -fx-border-radius: 15;" text="Back" textFill="#a9e031">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="notpassCreat" layoutX="91.0" layoutY="102.0" text="Password does not match!!!" textFill="#ff2d12" visible="false">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="maleSelect" layoutX="127.0" layoutY="435.0" mnemonicParsing="false" text="Male" textFill="#a9e031" />
+            <RadioButton fx:id="femaleSelect" layoutX="209.0" layoutY="435.0" mnemonicParsing="false" text="Female" textFill="#a9e031" />
+            <TextField fx:id="logupAge" layoutX="172.0" layoutY="187.0" prefHeight="40.0" prefWidth="44.0" promptText="Age" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <Label layoutX="180.0" layoutY="167.0" text="Age" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="forgetPane" layoutX="487.0" layoutY="45.0" prefHeight="553.0" prefWidth="397.0" style="-fx-background-color: #1f242a;" visible="false">
+         <children>
+            <HBox layoutX="47.0" layoutY="7.0" prefHeight="87.0" prefWidth="303.0">
+               <children>
+                  <ImageView fitHeight="88.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_DOT_100px.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="103.0" prefWidth="225.0">
+                     <children>
+                        <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="252.0" text="Medical Clinic" textFill="#a9e031">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="26.0" prefWidth="225.0" text="Services and medical care" textFill="#769e1a">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="69.0" layoutY="459.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#verificationClick" prefHeight="40.0" prefWidth="260.0" style="-fx-border-radius: 0; -fx-background-color: #15191c;" text="verification" textFill="#a9e031">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="21.0" layoutY="171.0" prefHeight="18.0" prefWidth="343.0" text="We will send a recovery code to your number ..." textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="codePass" layoutX="62.0" layoutY="277.0" prefHeight="40.0" prefWidth="260.0" promptText="Enter the encrypted code" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <HBox alignment="CENTER" layoutX="149.0" layoutY="505.0" prefHeight="35.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#backForgetClick" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../Images/icons8_Back_To_32px_2.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" style="-fx-background-color: non; -fx-border-color: #a9e031; -fx-border-radius: 15;" text="Back" textFill="#a9e031">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Label layoutX="62.0" layoutY="251.0" prefHeight="18.0" prefWidth="87.0" text="Enter code " textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="154.0" layoutY="146.0" prefHeight="25.0" prefWidth="76.0" text="(^~^)" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="192.0" layoutY="317.0" mnemonicParsing="false" onMouseClicked="#resendCode" style="-fx-background-color: non; -fx-border-radius: ;" text="Resend the code ?" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ProgressIndicator fx:id="resendLod" layoutX="171.0" layoutY="312.0" prefHeight="36.0" prefWidth="19.0" progress="0.0" rotate="-90.0" style="-fx-background-color: linear-gradient(to Top, #5dff00, #7e9930);;" />
+            <Label fx:id="notCode" layoutX="104.0" layoutY="393.0" prefHeight="18.0" prefWidth="177.0" text="Code Not Successfull !!!" textFill="#ff300c" visible="false">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="updatePassPane" layoutX="487.0" layoutY="44.0" prefHeight="553.0" prefWidth="397.0" style="-fx-background-color: #1f242a;" visible="false">
+         <children>
+            <HBox layoutX="47.0" layoutY="7.0" prefHeight="87.0" prefWidth="303.0">
+               <children>
+                  <ImageView fitHeight="88.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_DOT_100px.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="103.0" prefWidth="225.0">
+                     <children>
+                        <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="252.0" text="Medical Clinic" textFill="#a9e031">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="26.0" prefWidth="225.0" text="Services and medical care" textFill="#769e1a">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="69.0" layoutY="459.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#updatePassClick" prefHeight="40.0" prefWidth="260.0" style="-fx-border-radius: 0; -fx-background-color: #15191c;" text="Update Password" textFill="#a9e031">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="110.0" layoutY="135.0" prefHeight="18.0" prefWidth="164.0" text="Create New Password " textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="newPass" layoutX="62.0" layoutY="277.0" prefHeight="40.0" prefWidth="260.0" promptText="New Password" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <HBox alignment="CENTER" layoutX="149.0" layoutY="505.0" prefHeight="35.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#backUpdatePassClick" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../Images/icons8_Back_To_32px_2.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" style="-fx-background-color: non; -fx-border-color: #a9e031; -fx-border-radius: 15;" text="Back" textFill="#a9e031">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Label layoutX="62.0" layoutY="259.0" prefHeight="18.0" prefWidth="120.0" text="New Password" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="154.0" layoutY="110.0" prefHeight="25.0" prefWidth="76.0" text="(^_^)" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="338.0" prefHeight="18.0" prefWidth="141.0" text="Confirm Password" textFill="#a9e031">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="newPassConfirm" layoutX="62.0" layoutY="356.0" prefHeight="40.0" prefWidth="260.0" promptText="Confirm Password" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <Label fx:id="notPass" layoutX="84.0" layoutY="394.0" prefHeight="18.0" prefWidth="216.0" text="Password does not match !!!" textFill="#ff300c" visible="false">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="oldEmail" disable="true" layoutX="62.0" layoutY="200.0" prefHeight="40.0" prefWidth="260.0" promptText="Email" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+            <Label layoutX="62.0" layoutY="182.0" prefHeight="18.0" prefWidth="120.0" text="Email" textFill="#aade3199">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="loginNotCorrect" layoutX="118.0" layoutY="417.0" prefHeight="18.0" prefWidth="227.0" text="Incorrect password or email  !!!" textFill="#ff300c" visible="false">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
