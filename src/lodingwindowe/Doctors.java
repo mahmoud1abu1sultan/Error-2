@@ -9,10 +9,21 @@ package lodingwindowe;
  *
  * @author MAHMOUD.T
  */
-public class Doctors extends User{
-    
-    public Doctors(String firstName, String lastName, String email, String password, String gender, int age) {
+public class Doctors extends User {
+
+    private String specialization;
+
+    public Doctors(String firstName, String lastName, String email, String password, String gender, int age, String specialization) {
         super(firstName, lastName, email, password, gender, age);
+        this.specialization = specialization;
     }
-    
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
 }

@@ -18,6 +18,15 @@ public class User {
     private String gender;
     private int age;
 
+    public User(String firstName, String lastName, String email, String gender, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.gender = gender;
+        this.age = age;
+    }
+
+
     public User(String firstName, String lastName, String email, String password, String gender, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -27,11 +36,10 @@ public class User {
         this.age = age;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
+    public User(String firstName, String lastName, String gender, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
         this.age = age;
     }
 
@@ -75,5 +83,12 @@ public class User {
         this.gender = gender;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
 }

@@ -106,6 +106,10 @@ public class LoginWindowController implements Initializable {
     @FXML
     private Label loginNotCorrect;
 //media-
+    @FXML
+    private RadioButton doctorSelect;
+    @FXML
+    private RadioButton nurseSelect;
 
     /**
      * Initializes the controller class.
@@ -274,6 +278,7 @@ public class LoginWindowController implements Initializable {
         String pass_su = logupPassword.getText();
         String gender_us = (maleSelect.isSelected()) ? "male" : "female";
         int age_us = Integer.decode(logupAge.getText());
+        String specialization_su = (doctorSelect.isSelected()) ? "doctor" : "nurse";
 //        int status = (Casedoctor.isSelected()) ? 1 : 0;
 
         if (logupPassword.getText().equalsIgnoreCase(logupConfirmPassword.getText())
@@ -283,7 +288,7 @@ public class LoginWindowController implements Initializable {
                 && !logupEmail.getText().isEmpty()
                 && (maleSelect.isSelected() ^ femaleSelect.isSelected())
                 && !logupAge.getText().isEmpty()) {
-            User user = new User(fName_su, lName_su, email_su, pass_su, gender_us, age_us);
+            Doctors user = new Doctors(fName_su, lName_su, email_su, pass_su, gender_us, age_us, specialization_su);
             MyDatabase.singUp(user);
 
             //------------------------------

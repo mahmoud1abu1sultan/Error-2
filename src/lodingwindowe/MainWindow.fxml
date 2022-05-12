@@ -13,136 +13,402 @@
 
 <AnchorPane id="AnchorPane" fx:id="MainWindowScreen" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #2f353d;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lodingwindowe.MainWindowController">
    <children>
-      <Pane fx:id="patientPane" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2f353d;" visible="false">
+      <Pane fx:id="patientPane" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2f353d;">
          <children>
-            <ImageView fitHeight="586.0" fitWidth="977.0" layoutX="12.0" layoutY="7.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="586.0" fitWidth="787.0" layoutX="6.0" layoutY="7.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/wallpaperbetter.com_1280x768%20(2).jpg" />
+                  <Image url="@../Images/doctor.jpg" />
                </image>
             </ImageView>
-            <Pane layoutX="24.0" layoutY="20.0" prefHeight="147.0" prefWidth="310.0" style="-fx-background-radius: 10; -fx-border-color: #4deae0; -fx-border-radius: 10; -fx-border-width: 2;">
+            <Pane layoutX="370.0" layoutY="37.0" prefHeight="400.0" prefWidth="623.0" style="-fx-background-radius: 10; -fx-border-color: #4deae0; -fx-border-radius: 0; -fx-border-width: 2;">
                <children>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="2.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/patient.png" />
-                     </image>
-                  </ImageView>
-                  <Separator layoutY="39.0" prefHeight="3.0" prefWidth="94.0" style="-fx-background-color: #4deae0;" />
-                  <Label layoutX="36.0" layoutY="12.0" text="Patient" textFill="#4deae0">
+                  <TableView fx:id="p$tableViweP" layoutX="100.0" layoutY="-30.0" prefHeight="586.0" prefWidth="524.0" style="-fx-background-color: #2f353d; -fx-background-radius: 10; -fx-border-color: #4deae0; -fx-border-radius: 0; -fx-border-width: 2; -fx-text-fill: #ffffff;">
+                    <columns>
+                      <TableColumn minWidth="-1.0" prefWidth="126.0" text="Full Name">
+                           <columns>
+                              <TableColumn fx:id="p$Fname" prefWidth="75.0" text="First Name" />
+                              <TableColumn fx:id="p$Lname" prefWidth="75.0" text="Last Name" />
+                           </columns></TableColumn>
+                      <TableColumn fx:id="p$gender" minWidth="-1.0" prefWidth="55.0" text="Gender" />
+                        <TableColumn fx:id="p$age" minWidth="-1.0" prefWidth="42.0" text="Age" />
+                        <TableColumn fx:id="p$pathologicalCase" minWidth="-1.0" prefWidth="110.0" text="Pathological case" />
+                        <TableColumn fx:id="p$entryDate" minWidth="-1.0" prefWidth="72.0" text="entry date" />
+                        <TableColumn fx:id="p$checkoutDate" minWidth="-1.0" prefWidth="92.0" text="checkout date" />
+                        <TableColumn fx:id="p$emailCoulmn" editable="false" minWidth="-1.0" prefWidth="92.0" text="email" visible="false" />
+                        <TableColumn fx:id="p$supervisingDoctorCoulmn" editable="false" minWidth="-1.0" prefWidth="92.0" text="supervisingDoctor" visible="false" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="38.0" layoutY="12.0" text="Patients" textFill="#4deae0">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="p$patientImage" fitHeight="110.0" fitWidth="110.0" layoutX="195.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
-                  <VBox alignment="CENTER_LEFT" layoutX="11.0" layoutY="43.0" prefHeight="97.0" prefWidth="100.0" spacing="5.0">
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="3.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/patient.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutY="40.0" prefHeight="3.0" prefWidth="100.0" style="-fx-background-color: #4deae0;" />
+                  <VBox alignment="TOP_CENTER" layoutY="42.0" prefHeight="320.0" prefWidth="100.0" spacing="10.0">
                      <children>
-                        <HBox alignment="CENTER_LEFT" spacing="5.0">
-                           <children>
-                              <Label text="Name" textFill="#4deae0">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="p$patientName" textFill="WHITE" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" spacing="5.0">
-                           <children>
-                              <Label text="Age" textFill="#4deae0" />
-                              <Label fx:id="p$parientAge" textFill="WHITE" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" spacing="5.0">
-                           <children>
-                              <Label text="Gender" textFill="#4deae0" />
-                              <Label fx:id="p$patientGender" textFill="WHITE" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" spacing="5.0">
-                           <children>
-                              <Label text="Pathological case" textFill="#4deae0" />
-                              <Label fx:id="p$patientPathologicalCase" textFill="WHITE" />
-                           </children>
-                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#p$selectIemAction" style="-fx-background-color: #2f353d;" text="Select Item" textFill="#4deae0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#p$add_P" style="-fx-background-color: #2f353d;" text="Add Patient" textFill="#4deae0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#p$edite_p" style="-fx-background-color: #2f353d;" text="Edite info" textFill="#4deae0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#p$leavingPatient" style="-fx-background-color: #2f353d;" text="Leaving Patient" textFill="#4deae0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button mnemonicParsing="false" style="-fx-background-color: #2f353d;" text="Send To" textFill="#4deae0" />
+                        <Button mnemonicParsing="false" style="-fx-background-color: #2f353d;" text="Delete Patient" textFill="#4deae0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                      </children>
+                     <padding>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="5.0" />
+                     </padding>
                   </VBox>
+                  <HBox alignment="CENTER" layoutY="361.0" prefHeight="35.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#p$backClick_i" pickOnBounds="true" preserveRatio="true">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <image>
+                              <Image url="@../Images/icons8_Back_To_32px_2.png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onMouseClicked="#p$backClick_t" prefHeight="30.0" prefWidth="68.0" style="-fx-background-color: non; -fx-border-color: #4deae0; -fx-border-radius: 15; -fx-border-width: 2;" text="Back" textFill="#4deae0">
+                           <font>
+                              <Font name="Verdana Bold" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </Pane>
-            <Pane layoutX="24.0" layoutY="353.0" prefHeight="215.0" prefWidth="213.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+            <Label layoutX="123.0" layoutY="8.0" style="-fx-border-color: #4deae0; -fx-border-width: 2;" text="Control Board" textFill="#4deae0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Label>
+            <Pane fx:id="p$infoSelectP_pane" layoutX="14.0" layoutY="37.0" prefHeight="557.0" prefWidth="348.0" style="-fx-border-color: #4deae0; -fx-border-width: 2;" visible="false">
                <children>
-                  <Label layoutX="14.0" layoutY="7.0" text="Times of work" textFill="WHITE">
+                  <ImageView fitHeight="200.0" fitWidth="348.0" layoutX="3.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/wallpaperbetter.com_1024x600%20(2).jpg" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="1.0" layoutY="35.0" prefHeight="0.0" prefWidth="45.0" style="-fx-background-color: #4deae0;" />
+                  <Label layoutX="9.0" layoutY="5.0" text="Information Of Selected Patient" textFill="#4deae0">
                      <font>
-                        <Font name="Calibri Bold" size="24.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="169.0" layoutY="12.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="Edite" textFill="WHITE">
+                  <Label fx:id="p$edite_wrong1" layoutX="100.0" layoutY="445.0" style="-fx-background-color: #cfcfcf; -fx-border-radius: 10; -fx-background-radius: 10;" text="Verify that all data is correct" textFill="#ff300c" visible="false">
                      <font>
-                        <Font size="13.0" />
+                        <Font size="15.0" />
                      </font>
                      <padding>
-                        <Insets left="2.0" right="2.0" />
+                        <Insets bottom="5.0" left="1.0" right="1.0" top="5.0" />
                      </padding>
                   </Label>
-                  <VBox layoutX="12.0" layoutY="41.0" prefHeight="160.0" prefWidth="146.0" spacing="8.0">
+                  <VBox layoutX="21.0" layoutY="239.0" spacing="10.0">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
                            <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../Images/icons8-monday-48.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="01 - 11 PM" textFill="#4deae0">
+                              <Label text="Full Name: " textFill="#4deae0">
                                  <font>
-                                    <Font name="Cambria Math" size="18.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
+                              <Label fx:id="p$info_FullName" text="..." textFill="#bdff2e">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
                            <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../Images/icons8-tuesday-48.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="01 - 10 PM" textFill="#4deae0">
+                              <Label text="Age: " textFill="#4deae0">
                                  <font>
-                                    <Font name="Cambria Math" size="18.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
+                              <Label fx:id="p$info_age" text="..." textFill="#bdff2e">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
                            <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../Images/icons8-wednesday-48.png" />
-                                 </image>
-                              </ImageView>
-                              <Label text="02 - 05 PM" textFill="#4deae0">
+                              <Label text="Gender: " textFill="#4deae0">
                                  <font>
-                                    <Font name="Cambria Math" size="18.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
+                              <Label fx:id="p$info_gender" text="..." textFill="#bdff2e">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Email: " textFill="#4deae0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="p$info_email" text="..." textFill="#bdff2e">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Pathological Case: " textFill="#4deae0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="p$info_pathologicalCase" text="..." textFill="#bdff2e">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label text="Supervising Doctor: " textFill="#4deae0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="p$info_supervisingDoctor" text="..." textFill="#bdff2e">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
                      </children>
                   </VBox>
+                  <Label layoutX="29.0" layoutY="70.0" text="Welcome (^_-)">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#bdff2e" />
+                              <Stop color="#37eeff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
                </children>
-               <effect>
-                  <DropShadow />
-               </effect>
             </Pane>
+            <Pane fx:id="p$addPatient_pane" layoutX="14.0" layoutY="37.0" prefHeight="557.0" prefWidth="348.0" style="-fx-border-color: #4deae0; -fx-border-width: 2;" visible="false">
+               <children>
+                  <Label layoutX="14.0" layoutY="57.0" text="First Name" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="p$add_firstName" layoutX="13.0" layoutY="77.0" prefHeight="40.0" prefWidth="135.0" promptText="First Name" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <Button layoutX="44.0" layoutY="503.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#p$add_PatientGo" prefHeight="40.0" prefWidth="260.0" style="-fx-border-radius: 0; -fx-background-color: #1f242a;" text="Add Patient" textFill="#4deae0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="1.0" layoutY="35.0" prefHeight="0.0" prefWidth="45.0" style="-fx-background-color: #4deae0;" />
+                  <Label layoutX="9.0" layoutY="5.0" text="Add New Patient" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="198.0" layoutY="57.0" text="First Name" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="p$add_lastName" layoutX="198.0" layoutY="77.0" prefHeight="40.0" prefWidth="135.0" promptText="Last Name" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <Label layoutX="161.0" layoutY="117.0" text="Age" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="p$add_age" layoutX="144.0" layoutY="137.0" prefHeight="40.0" prefWidth="61.0" promptText="Age" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <TextField fx:id="p$add_email" layoutX="13.0" layoutY="197.0" prefHeight="40.0" prefWidth="321.0" promptText="Email" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <Label layoutX="14.0" layoutY="177.0" text="Email" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="237.0" text="Pathological Case" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="p$add_pathologicalCase" layoutX="14.0" layoutY="257.0" prefHeight="40.0" prefWidth="321.0" promptText="Pathological Case" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <TextField fx:id="p$add_SD$dis" editable="false" layoutX="14.0" layoutY="317.0" prefHeight="40.0" prefWidth="321.0" promptText="Supervising Doctor" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <Label layoutX="15.0" layoutY="297.0" text="Supervising Doctor" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="p$add_female" layoutX="198.0" layoutY="373.0" mnemonicParsing="false" text="Female" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="p$add_male" layoutX="119.0" layoutY="373.0" mnemonicParsing="false" text="Male" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Label fx:id="p$add_wrong" layoutX="100.0" layoutY="442.0" style="-fx-background-color: #cfcfcf; -fx-border-radius: 10; -fx-background-radius: 10;" text="Verify that all data is correct" textFill="#ff300c" visible="false">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="1.0" right="1.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="p$editeInformationP_pane" layoutX="14.0" layoutY="37.0" prefHeight="557.0" prefWidth="348.0" style="-fx-border-color: #4deae0; -fx-border-width: 2;" visible="false">
+               <children>
+                  <Label layoutX="14.0" layoutY="57.0" text="First Name" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="p$edite_firstName" layoutX="13.0" layoutY="77.0" prefHeight="40.0" prefWidth="135.0" promptText="First Name" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <Button layoutX="44.0" layoutY="503.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#p$edite_PatientGo" prefHeight="40.0" prefWidth="260.0" style="-fx-border-radius: 0; -fx-background-color: #1f242a;" text="Edite Information" textFill="#4deae0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="1.0" layoutY="35.0" prefHeight="0.0" prefWidth="45.0" style="-fx-background-color: #4deae0;" />
+                  <Label layoutX="9.0" layoutY="5.0" text="Edite Information Of Patient" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="198.0" layoutY="57.0" text="First Name" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="p$edite_lastName" layoutX="198.0" layoutY="77.0" prefHeight="40.0" prefWidth="135.0" promptText="Last Name" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <Label layoutX="161.0" layoutY="117.0" text="Age" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="p$edite_age" layoutX="144.0" layoutY="137.0" prefHeight="40.0" prefWidth="61.0" promptText="Age" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <TextField fx:id="p$edite_email" editable="false" layoutX="13.0" layoutY="197.0" prefHeight="40.0" prefWidth="321.0" promptText="Email" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <Label layoutX="14.0" layoutY="177.0" text="Email" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="237.0" text="Pathological Case" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="p$edite_pathologicalCase" layoutX="14.0" layoutY="257.0" prefHeight="40.0" prefWidth="321.0" promptText="Pathological Case" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <TextField fx:id="p$edite_SD$dis" editable="false" layoutX="14.0" layoutY="317.0" prefHeight="40.0" prefWidth="321.0" promptText="Supervising Doctor" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                  <Label layoutX="15.0" layoutY="297.0" text="Supervising Doctor" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="p$edite_female" layoutX="198.0" layoutY="373.0" mnemonicParsing="false" text="Female" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="p$edite_male" layoutX="119.0" layoutY="373.0" mnemonicParsing="false" text="Male" textFill="#4deae0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Label fx:id="p$edite_wrong" layoutX="100.0" layoutY="445.0" style="-fx-background-color: #cfcfcf; -fx-border-radius: 10; -fx-background-radius: 10;" text="Verify that all data is correct" textFill="#ff300c" visible="false">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="1.0" right="1.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox fx:id="p$successfull" alignment="CENTER" layoutX="25.0" layoutY="48.0" visible="false">
+               <children>
+                  <Label text="operation accomplished successfully">
+                     <font>
+                        <Font name="MV Boli" size="20.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#bdff2e" />
+                              <Stop color="#37eeff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label text=")^_^(">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#bdff2e" />
+                              <Stop color="#37eeff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill></Label>
+               </children>
+            </VBox>
          </children></Pane>
-      <Pane fx:id="doctorPane" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2f353d;">
+      <Pane fx:id="doctorPane" layoutX="50.0" layoutY="50.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2f353d;" visible="false">
          <children>
             <ImageView fitHeight="591.0" fitWidth="977.0" layoutX="12.0" layoutY="7.0" opacity="0.32" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/wallpaperbetter.com_1280x768%20(1).jpg" />
                </image>
             </ImageView>
-            <Pane layoutX="696.0" layoutY="41.0" prefHeight="262.0" prefWidth="286.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+            <Pane layoutX="696.0" layoutY="56.0" prefHeight="262.0" prefWidth="286.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
                <children>
                   <Label layoutX="14.0" layoutY="7.0" text="Emergency" textFill="WHITE">
                      <font>
@@ -156,6 +422,9 @@
                      <padding>
                         <Insets left="2.0" right="2.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                   <VBox layoutX="25.0" layoutY="36.0" prefHeight="215.0" prefWidth="249.0" spacing="10.0">
                      <children>
@@ -236,22 +505,25 @@
                   <DropShadow />
                </effect>
             </Pane>
-            <Pane layoutX="14.0" layoutY="372.0" prefHeight="215.0" prefWidth="213.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+            <Pane layoutX="14.0" layoutY="372.0" prefHeight="215.0" prefWidth="310.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
                <children>
                   <Label layoutX="14.0" layoutY="7.0" text="Times of work" textFill="WHITE">
                      <font>
                         <Font name="Calibri Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="169.0" layoutY="12.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="Edite" textFill="WHITE">
+                  <Label layoutX="260.0" layoutY="12.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="Edite" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
                      <padding>
                         <Insets left="2.0" right="2.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
-                  <VBox layoutX="12.0" layoutY="41.0" prefHeight="160.0" prefWidth="146.0" spacing="8.0">
+                  <VBox layoutX="14.0" layoutY="41.0" prefHeight="160.0" prefWidth="146.0" spacing="8.0">
                      <children>
                         <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
                            <children>
@@ -289,6 +561,37 @@
                                  </image>
                               </ImageView>
                               <Label text="02 - 05 PM" textFill="#4deae0">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="160.0" layoutY="41.0" prefHeight="160.0" prefWidth="133.0" spacing="8.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <Label text="05 - 00 PM" textFill="#4deae0">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <Label text="08 - 00 PM" textFill="#4deae0">
+                                 <font>
+                                    <Font name="Cambria Math" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="58.0" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <Label text="03 - 00 PM" textFill="#4deae0">
                                  <font>
                                     <Font name="Cambria Math" size="18.0" />
                                  </font>
@@ -346,6 +649,17 @@
                         </HBox>
                      </children>
                   </VBox>
+                  <Label layoutX="263.0" layoutY="13.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="Edite" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
                </children>
             </Pane>
             <Pane layoutX="333.0" layoutY="10.0" prefHeight="147.0" prefWidth="168.0" style="-fx-background-radius: 10; -fx-border-color: #4deae0; -fx-border-radius: 10; -fx-border-width: 2;">
@@ -429,6 +743,9 @@
                      <padding>
                         <Insets left="2.0" right="2.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -513,13 +830,35 @@
                   <DropShadow />
                </effect>
             </Pane>
-            <Separator layoutX="681.0" layoutY="7.0" opacity="0.52" orientation="VERTICAL" prefHeight="586.0" prefWidth="0.0" style="-fx-background-color: #4deae0; -fx-border-color: non; -fx-border-width: 0; -fx-background-radius: 10; -fx-border-radius: 10;" />
             <Label layoutX="814.0" layoutY="14.0" text="MEDICAL" textFill="#4deae0">
                <font>
                   <Font name="Trebuchet MS Bold" size="15.0" />
                </font>
             </Label>
-            <Pane layoutX="696.0" layoutY="315.0" prefHeight="270.0" prefWidth="286.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+            <Pane layoutX="329.0" layoutY="165.0" prefHeight="422.0" prefWidth="348.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" text="Today's appointments" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="301.0" layoutY="12.0" style="-fx-background-color: #4deae0; -fx-background-radius: 10;" text="Edite" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <Pane layoutX="696.0" layoutY="325.0" prefHeight="262.0" prefWidth="286.0" style="-fx-border-color: #4deae0; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
                <children>
                   <Label layoutX="14.0" layoutY="7.0" text="Emergency" textFill="WHITE">
                      <font>
@@ -533,6 +872,9 @@
                      <padding>
                         <Insets left="2.0" right="2.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                   <VBox layoutX="25.0" layoutY="36.0" prefHeight="215.0" prefWidth="249.0" spacing="10.0">
                      <children>
@@ -750,7 +1092,7 @@
                      </font>
                   </Label>
                   <Separator layoutY="37.0" prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
-                  <Label layoutX="331.0" layoutY="9.0" onMouseClicked="#addNew_LastNews" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="+ Add News" textFill="#f5f4f4">
+                  <Label layoutX="331.0" layoutY="9.0" onMouseClicked="#m$new_LastNews" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="+ Add News" textFill="#f5f4f4">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -761,13 +1103,13 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <ScrollPane layoutY="40.0" prefHeight="262.0" prefWidth="415.0" style="-fx-background-color: #ffffff;">
+                  <ScrollPane fx:id="m$lastNewsAorede" layoutY="40.0" prefHeight="262.0" prefWidth="415.0" style="-fx-background-color: #ffffff;">
                      <content>
-                        <VBox fx:id="listOf_LastNews" layoutX="5.0" prefHeight="200.0" prefWidth="413.0">
+                        <VBox fx:id="m$listOf_LastNews" layoutX="5.0" prefHeight="200.0" prefWidth="413.0">
                            <children>
                               <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
                                  <children>
-                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Appointments" textFill="#f5f4f4">
+                                    <Label fx:id="m$subNews1_t" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Appointments" textFill="#f5f4f4">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -775,8 +1117,8 @@
                                           <Insets left="2.0" right="2.0" />
                                        </padding>
                                     </Label>
-                                    <Label text="The morning work hours were advanced by an hour, and the evening " />
-                                    <Label text="hours were delayed by half an hour" />
+                                    <Label fx:id="m$subNews1_d" prefHeight="32.0" prefWidth="368.0" text="The morning work hours were advanced by an hour, and the evening " />
+                                    <Label text="..." />
                                     <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
                                  </children>
                                  <padding>
@@ -785,7 +1127,7 @@
                               </VBox>
                               <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
                                  <children>
-                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Doctores" textFill="#f5f4f4">
+                                    <Label fx:id="m$subNews2_t" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Doctores" textFill="#f5f4f4">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -793,8 +1135,8 @@
                                           <Insets left="2.0" right="2.0" />
                                        </padding>
                                     </Label>
-                                    <Label text="A new oncologist has been appointed based on his experiences and" />
-                                    <Label text="the certificates assigned to him" />
+                                    <Label fx:id="m$subNews2_d" text="A new oncologist has been appointed based on his experiences and" />
+                                    <Label text="..." />
                                     <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
                                  </children>
                                  <padding>
@@ -803,7 +1145,7 @@
                               </VBox>
                               <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
                                  <children>
-                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Add a patient" textFill="#f5f4f4">
+                                    <Label fx:id="m$subNews3_t" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Add a patient" textFill="#f5f4f4">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -811,8 +1153,8 @@
                                           <Insets left="2.0" right="2.0" />
                                        </padding>
                                     </Label>
-                                    <Label text="A new patient has been admitted to the thromboembolism department" />
-                                    <Label text="with mild obstruction" />
+                                    <Label fx:id="m$subNews3_d" text="A new patient has been admitted to the thromboembolism department" />
+                                    <Label text="..." />
                                     <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
                                  </children>
                                  <padding>
@@ -821,7 +1163,7 @@
                               </VBox>
                               <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
                                  <children>
-                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Patient referrals" textFill="#f5f4f4">
+                                    <Label fx:id="m$subNews4_t" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Patient referrals" textFill="#f5f4f4">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -829,8 +1171,8 @@
                                           <Insets left="2.0" right="2.0" />
                                        </padding>
                                     </Label>
-                                    <Label text="A patient was transferred from the dressing department to the" />
-                                    <Label text=" emergency operations department" />
+                                    <Label fx:id="m$subNews4_d" text="A patient was transferred from the dressing department to the" />
+                                    <Label text="..." />
                                     <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
                                  </children>
                                  <padding>
@@ -839,7 +1181,7 @@
                               </VBox>
                               <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
                                  <children>
-                                    <Label style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Appointments" textFill="#f5f4f4">
+                                    <Label fx:id="m$subNews5_t" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Appointments" textFill="#f5f4f4">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -847,8 +1189,26 @@
                                           <Insets left="2.0" right="2.0" />
                                        </padding>
                                     </Label>
-                                    <Label text="The morning work hours were advanced by an hour, and the evening " />
-                                    <Label text="hours were delayed by half an hour" />
+                                    <Label fx:id="m$subNews5_d" text="The morning work hours were advanced by an hour, and the evening " />
+                                    <Label text="..." />
+                                    <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="10.0" prefWidth="415.0" spacing="1.0">
+                                 <children>
+                                    <Label fx:id="m$subNews6_t" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="Patient referrals" textFill="#f5f4f4">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" right="2.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="m$subNews6_d" text="A patient was transferred from the dressing department to the" />
+                                    <Label text="..." />
                                     <Separator prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
                                  </children>
                                  <padding>
@@ -859,6 +1219,38 @@
                         </VBox>
                      </content>
                   </ScrollPane>
+                  <Pane fx:id="m$pane_addNews" layoutX="8.0" layoutY="43.0" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #15191c; -fx-border-color: #a9e031; -fx-border-width: 0.5;" visible="false">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" spacing="5.0" style="-fx-background-color: non; -fx-border-color: #4deae0; -fx-border-width: 0.5;">
+                           <children>
+                              <Label text="News Title" textFill="#a9e031">
+                                 <font>
+                                    <Font name="Verdana Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="m$newsTitle" prefHeight="40.0" prefWidth="260.0" promptText="News Title" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                              <Label text="Description" textFill="#a9e031">
+                                 <font>
+                                    <Font name="Verdana Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="m$newsDescription" layoutX="20.0" layoutY="94.0" prefHeight="40.0" prefWidth="260.0" promptText="Description" style="-fx-border-color: #a9e031; -fx-border-width: 2; -fx-background-color: #1f242a; -fx-text-fill: #ffffff;" />
+                              <Separator fx:id="m$seperator" prefHeight="3.0" prefWidth="415.0" style="-fx-background-color: #4deae0;" />
+                              <Button mnemonicParsing="false" onMouseClicked="#add_LastNews" style="-fx-background-color: #15191c; -fx-border-color: #a9e031; -fx-border-width: 2; -fx-text-fill: #8a948c;" text="Button" textFill="#a9e031">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
             <VBox alignment="CENTER" layoutX="14.0" layoutY="11.0" prefHeight="582.0" prefWidth="168.0" spacing="20.0">
@@ -1047,7 +1439,7 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-                  <Label layoutX="137.0" layoutY="9.0" onMouseClicked="#addNew_LastNews" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="+ Add News" textFill="#f5f4f4">
+                  <Label layoutX="137.0" layoutY="9.0" onMouseClicked="#m$new_News" style="-fx-background-color: #a9e151; -fx-background-radius: 10;" text="+ Add News" textFill="#f5f4f4">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

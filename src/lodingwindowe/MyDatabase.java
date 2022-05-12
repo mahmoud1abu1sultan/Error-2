@@ -5,9 +5,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Level;
-import javafx.fxml.FXMLLoader;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.layout.VBox;
 
 /**
  *
@@ -24,10 +30,10 @@ public class MyDatabase {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url, userName, password);
+            System.out.println("Successful Connection To Database use \"java mysql JDBC Driver\"");
         } catch (ClassNotFoundException | SQLException ex) {
             System.err.println(ex + "Say Hello To The ClassNotFoundException (_-_)");
         }
-        System.out.println("Successful Connection To Database use \"java mysql JDBC Driver\"");
     }//END;
 //-----------------------------------------------------------------------------v
 
@@ -55,19 +61,19 @@ public class MyDatabase {
 //    -----
 
 //---------------------------- SingUp ***
-    public static void singUp(User user) {
+    public static void singUp(Doctors doctor) {
         if (conn == null) {
             getConnection();
         } else {
             try {
                 PreparedStatement statement = conn.prepareStatement("INSERT into doctor VALUES (?,?,?,?,?,?,?)");
-                statement.setString(1, user.getFirstName());
-                statement.setString(2, user.getLastName());
-                statement.setString(3, user.getEmail());
-                statement.setString(4, user.getPassword());
-                statement.setString(5, user.getGender());
-                statement.setInt(6, user.getAge());
-                statement.setString(7, "");
+                statement.setString(1, doctor.getFirstName());
+                statement.setString(2, doctor.getLastName());
+                statement.setString(3, doctor.getEmail());
+                statement.setString(4, doctor.getPassword());
+                statement.setString(5, doctor.getGender());
+                statement.setInt(6, doctor.getAge());
+                statement.setString(7, doctor.getSpecialization());
                 statement.executeUpdate();
             } catch (SQLException ex) {
                 System.out.println(ex + " Exception (_-_)");
@@ -82,7 +88,7 @@ public class MyDatabase {
             getConnection();
         } else {
             try {
-                PreparedStatement statement = conn.prepareStatement("UPDATE doctor SET email=?, password=? WHERE email=" + emailUser);
+                PreparedStatement statement = conn.prepareStatement("UPDATE doctor SET email=?, password=? WHERE email='" + emailUser + "'");
                 statement.setString(1, emailUser);
                 statement.setString(2, passUser);
                 statement.executeUpdate();
@@ -358,7 +364,7 @@ public class MyDatabase {
     //---
 
 //---------------------------- Number of Patient For Doctor ***
-    public static HashMap<String, String> doctorInfoForPatient(String emailForSerch) {
+    public static HashMap<String, String> doctorInfoForPatients(String emailForSerch) {
         HashMap<String, String> listOfInfo = new HashMap<>();
         if (conn == null) {
             getConnection();
@@ -442,9 +448,111 @@ public class MyDatabase {
         return listOfInfo;
     }//END;
     //---
+
+    public static int newLastNews(String title, String descr) {
+        int countNews = 6;
+        if (conn == null) {
+            getConnection();
+        } else {
+            try {
+                PreparedStatement statement = conn.prepareStatement("INSERT into last_news VALUES (?,?)");
+                statement.setString(1, title);
+                statement.setString(2, descr);
+                statement.executeUpdate();
+                //---
+                PreparedStatement statcount = conn.prepareStatement("SELECT count(*) AS count FROM last_news");
+                ResultSet rs = statcount.executeQuery();
+                rs.next();
+                countNews = rs.getInt("count");
+                rs.close();
+
+            } catch (SQLException ex) {
+                System.out.println(ex + " Exception (_-_)");
+            }
+        }
+        return countNews;
+    }//END;
+//    ------
 //-----------------------------------------------------------------------------^
 
-//-----------------------------------------------------------------------------^
 //-------------------------------------------------Doctor Pane.
-//---------------------------- Number of Doctor ***
+//----------------------------Doctor ***
+//-----------------------------------------------------------------------------^
+//-------------------------------------------------Patient Pane.
+    public static ObservableList<Patients> patient_info() {
+        MainWindowController mn = new MainWindowController();
+        ObservableList<Patients> info = FXCollections.observableArrayList();
+        int countPatient = 0;
+
+        if (conn == null) {
+            getConnection();
+        } else {
+            try {
+                PreparedStatement statment = conn.prepareStatement("SELECT * FROM patient");
+                ResultSet rs = statment.executeQuery();
+                while (rs.next()) {
+                    String fName = rs.getString("Fname");
+                    String lName = rs.getString("Lname");
+                    String email = rs.getString("email");
+                    String gender = rs.getString("gender");
+                    int age = rs.getInt("age");
+                    Date entry_date = rs.getDate("entry_date");
+                    Date checkout_date = rs.getDate("checkout_date");
+                    String pathological_case = rs.getString("pathological_case");
+                    String supervising_doctor = rs.getString("supervising_doctor");
+                    //---
+                    Patients pati = new Patients(fName, lName, email, gender, age, entry_date, checkout_date, pathological_case, supervising_doctor);
+                    info.add(pati);
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex + " Exception (_-_)");
+            }
+        }
+
+        return info;
+    }//END;
+    //---
+
+    public static void add_newPatient(Patients p) {
+        if (conn == null) {
+            getConnection();
+        } else {
+            try {
+                PreparedStatement statement = conn.prepareStatement("INSERT into patient "
+                        + "(Fname,Lname,email,gender,age,pathological_case,supervising_doctor)"
+                        + " VALUES (?,?,?,?,?,?,?)");
+                statement.setString(1, p.getFirstName());
+                statement.setString(2, p.getLastName());
+                statement.setString(3, p.getEmail());
+                statement.setString(4, p.getGender());
+                statement.setInt(5, p.getAge());
+                statement.setString(6, p.getPathologicalCase());
+                statement.setString(7, p.getSupervisingDoctor());
+                statement.executeUpdate();
+            } catch (SQLException ex) {
+                System.out.println(ex + " Exception (_-_)");
+            }
+        }
+    }//END;
+    //---
+
+    public static void edite_newPatient(Patients p) {
+        if (conn == null) {
+            getConnection();
+        } else {
+            try {
+                PreparedStatement statement = conn.prepareStatement("UPDATE patient SET Fname=? ,Lname=? ,email=? ,gender=?,age=?,pathological_case=? WHERE email='" + p.getEmail() + "'");
+                statement.setString(1, p.getFirstName());
+                statement.setString(2, p.getLastName());
+                statement.setString(3, p.getEmail());
+                statement.setString(4, p.getGender());
+                statement.setInt(5, p.getAge());
+                statement.setString(6, p.getPathologicalCase());
+                statement.executeUpdate();
+            } catch (SQLException ex) {
+                System.out.println(ex + " Exception (_-_)");
+            }
+        }
+    }//END;
+    //---
 }//END MyDatabase;
